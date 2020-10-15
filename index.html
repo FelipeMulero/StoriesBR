@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stories Br app</title>
+    <link rel="stylesheet" href="sources/fontawesome-free-5.13.0-web/css/all.css">
+    <link rel="stylesheet" href="sources/css/app.css">
+    <link rel="stylesheet" href="sources/css/animacao.css">
+    <style>
+        iframe{
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="claro">
+    <script>
+        if(!navigator.onLine) window.location.href = 'offline.html';
+        function updateOnlineStatus(event) {
+            const condition = navigator.onLine ? "online" : "offline";
+            console.log(condition);
+            window.location.href = 'offline.html';
+        }
+        window.addEventListener('offline', updateOnlineStatus);
+
+        let tema = localStorage.getItem('tema');
+        const body = document.querySelector('body');
+        if(tema === 'escuro') body.classList.replace('claro', 'escuro')
+    </script>
+    <script defer src="sources/javascript/app.js"></script>
+
+    <div id="load_page" class="load_page"><!--pag carregamento-->
+        <img src="sources/img/caravela2.png" class="boat">
+        <div class="carregando">
+            <span>C</span>
+            <span>a</span>
+            <span>r</span>
+            <span>r</span>
+            <span>e</span>
+            <span>g</span>
+            <span>a</span>
+            <span>n</span>
+            <span>d</span>
+            <span>o</span>
+            <span>.</span>
+            <span>.</span>
+            <span>.</span>
+        </div>
+        <div class="wave"></div>
+    </div>
+    <div id="tela_app"><!--contem todas telas-->
+        <div class="views">
+            <div id="pesquisar" class="view left">
+                <div class="ini-bar">
+                    <p>Artigos</p>
+                </div>
+                <div class="container-livros">
+                    <div id="buscarTudo" class="livro-tab">
+                        <i class="fas fa-search"></i>
+                        <p>Ver todos</p>
+                    </div>
+                    <p class="atualizacoes">Últimas atualizações</p>
+                    <div id="buscaArtigosBox" class="livro-container">
+                        <div id="1" class="livro-card">
+                            <div class="card-titulo">
+                                <p>Descobrimento do Brasil</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="atualizacoes">Outros artigos</p>
+                    <div id="outrosArtigosBox" class="secao-container">
+                        <div id="1" class="livro-card">
+                            <div class="card-titulo">
+                                <p>Descobrimento do Brasil</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="jogos" class="view left">
+                <div class="ini-bar">
+                    <p>Jogos</p>
+                </div>
+                <div class="playground-container">
+                    <div class="playground-box">
+                        <div id="cardQuiz" class="playground-content"> 
+                          <img src="sources/img/5.svg" alt="">
+                          <h4>Quiz Stories</h4><br>
+                          <p>Leia os artigos da página e Teste seu conhecimento no Quiz de perguntas</p>
+                        </div>   
+                    </div>
+                    <div class="playground-box">
+                        <div id="cardMem" class="playground-content"> 
+                          <img src="sources/img/4.svg" alt="">
+                          <h4>Jogo da memoria</h4> <br>
+                          <p>Pratique de forma rápida divertida a sua memória</p>
+                        </div>   
+                    </div>
+                    <div class="playground-box">
+                        <div id="cardDig" class="playground-content"> 
+                          <img src="sources/img/6.svg" alt="">
+                          <h4>Jogo da digitação</h4><br>
+                          <p>Divirta-se digitando cada vez rápido com tempo recorde!</p>
+                        </div>   
+                    </div>
+                    <div class="playground-box">
+                        <div id="cardAvat" class="playground-content"> 
+                          <img src="sources/img/3.svg" alt="">
+                          <h4>Personalize seu Avatar</h4><br>
+                          <p>Crie e customize seu próprio avatar</p>
+                        </div>   
+                    </div>
+                </div>                
+            </div>
+
+            <div id="inicio" class="view down" style="display: block;">
+                <div class="ini-bar">
+                    <i class="fas fa-user-circle"></i>
+                    <p>Você está desconectado</p>
+                    <button class="login">Entrar</button>
+                    <button class="logout hidden">Sair</button>
+                </div>
+                <p class="atualizacoes">Artigos recomendados</p>
+                <div id="inicioArtigosBox" class="inicio-livro-container">
+                    <div id="1" class="inicio-livro-card">
+                        <div class="inicio-card-titulo">
+                            <h5>Descobrimento do Brasil</h5>
+                            <p>A chegada de Cabral ao território brasileiro representou o início de uma conquista sobre o descobrimento</p>
+                            <button>Ler agora</button>
+                        </div>
+                    </div>
+                </div>
+                <p class="atualizacoes">Divirta-se aprendendo</p>
+
+                <div class="playground-container">
+                    <div class="playground-box">
+                        <div id="cardArt" class="playground-content"> 
+                          <img src="sources/img/1.svg" alt="">
+                          <h4>Artigos em audio</h4> <br>
+                          <p>Estude os artigos e conheça mais do Brasil e com comodidade de ouvir seus textos em audio, em português ou inglês</p>
+                        </div>   
+                    </div>
+                    <div class="playground-box">
+                        <div id="cardVideo" class="playground-content"> 
+                          <img src="sources/img/2.svg" alt="">
+                          <h4>Videos</h4> <br>
+                          <p>Aprenda se dirvertindo com as histórias animadas da Turma do Seu Cabral</p>
+                        </div>   
+                    </div>
+                    <div class="playground-box">
+                        <div id="cardAvat" class="playground-content"> 
+                          <img src="sources/img/3.svg" alt="">
+                          <h4>Personalize seu Avatar</h4><br>
+                          <p>Crie e customize seu próprio avatar</p>
+                        </div>   
+                    </div>
+                    <div class="playground-box">
+                        <div id="cardQuiz" class="playground-content"> 
+                          <img src="sources/img/5.svg" alt="">
+                          <h4>Quiz Stories</h4><br>
+                          <p>Leia os artigos da página e Teste seu conhecimento no Quiz de perguntas</p>
+                        </div>   
+                    </div>
+                </div>                
+            </div>
+
+            <div id="videos" class="view right">
+                <div class="ini-bar">
+                    <p>Vídeos</p>
+                </div>
+                <div class="videos-container">
+                    <div id="1" class="video-card">
+                        <div class="video-frame">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/xtAHgrNs7r4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-card-titulo">
+                            <p>Descobrimento do Brasil</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="configuracao" class="view right">
+                <div class="ini-bar">
+                    <p>Configurações</p>
+                </div>
+                <div class="conta-container">
+                    <div class="usuario-container">
+                        <i class="fas fa-user-circle"></i>
+                        <p>Nome</p>
+                        <p class="email"></p>
+                    </div>
+                    <div class="senha-container">
+                        <h3>Alterar senha</h3>
+                        <p>senha atual</p>
+                        <input type="password" id="senhaAtual">
+                        <p>senha nova</p>
+                        <input type="password" id="senhaNova">
+                        <button>Alterar</button>
+                    </div>
+                    <div class="tema-container">
+                        <h3>Alterar tema</h3>
+                        <br><select id="tema">
+                            <option value="claro">Claro</option>
+                            <option value="escuro">Escuro</option>
+                        </select>
+                    </div>
+                    <div class="sugestao-container">
+                        <h3>Feedback</h3>
+                        <br><p>Reportar erro</p>
+                        <textarea id="reporte" rows="6"></textarea>
+                        <br><p id="nomeTitulo">Insira seu nome</p>
+                        <input type="text" id="nome">
+                        <p  id="emailTitulo">Insira seu e-mail</p>
+                        <input type="text" id="email">
+                        <br><button>Enviar</button>
+
+                        <br><h2>Avalie nosso aplicativo</h2>
+                        <div class="avalie-container">
+                            <div class="avalie thumbs-up"><i class="fas fa-thumbs-up thumbs-up"></i></div>
+                            <div class="avalie thumbs-down"><i class="fas fa-thumbs-down thumbs-down"></i></div>
+                        </div>
+                    </div>
+                    <div class="creditos-container">
+                        <h3>Créditos</h3>
+                        <p>Somos um Grupo acadêmico do curso de Análise e Desenvolvimento de Sistemas do 5° semestre de 2020 da faculdade UNIBR-SV, elaborando um projeto com objetivo de ajudar e facilitar o aprendizado da história brasileira de forma mais interativa e divertida</p>
+                        <br><h3>Desenvolvido por</h3>
+                        <p>Marcelo</p>
+                        <p>Felipe</p>
+                        <p>Samuel</p>
+                        <p>Caroliny</p>
+                        <p>Daniel</p>
+                        <br><h3>Contato</h3>
+                        <p>storesbrazil@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nav"><!--navbar de acesso rápido-->
+            <div id="nav_pesquisar" class="nav_items"><i class="fas fa-search"></i></div>
+            <div id="nav_jogos" class="nav_items"><i class="fas fa-gamepad"></i></div>
+            <div id="nav_inicio" class="nav_items active">
+                <svg width="45" height="45" viewBox="0 0 640 640" preserveAspectRatio="xMidYMid meet">
+                    <g transform="translate(0.000000,640.000000) scale(0.100000,-0.100000)">
+                    <path d="M1185 6390 c-518 -41 -953 -380 -1119 -874 -66 -196 -61 -24 -61
+                    -2321 0 -1952 1 -2085 18 -2162 57 -264 173 -481 356 -663 185 -185 405 -301
+                    664 -351 94 -18 174 -19 2157 -19 1983 0 2063 1 2157 19 461 89 827 411 977
+                    855 66 196 61 24 61 2321 0 1952 -1 2085 -18 2162 -57 264 -173 481 -356 663
+                    -183 182 -393 294 -661 353 -94 21 -107 21 -2085 23 -1094 1 -2035 -2 -2090
+                    -6z m1300 -1510 c351 -9 454 -24 605 -87 206 -85 358 -252 419 -460 53 -178
+                    49 -468 -8 -633 -16 -47 -41 -107 -57 -135 -43 -77 -177 -204 -260 -245 l-69
+                    -35 66 -22 c206 -69 358 -241 419 -478 17 -62 22 -114 23 -230 2 -210 -1 -257
+                    -25 -360 -79 -341 -314 -576 -648 -646 -103 -22 -120 -23 -877 -23 -424 -1
+                    -774 2 -777 5 -12 11 -19 1661 -11 2501 l7 848 167 3 c380 6 734 6 1026 -3z
+                    m2875 -1164 l0 -403 -147 -6 c-257 -9 -395 -64 -455 -182 -52 -100 -51 -90
+                    -55 -868 l-4 -727 -425 0 -424 0 0 1255 0 1255 410 0 410 0 0 -156 0 -155 47
+                    68 c97 142 182 219 293 267 62 27 200 52 308 55 l42 1 0 -404z M2211 4213 l-24 
+                    -5 8 -311 c4 -172 9 -314 11 -316 3 -3 55 -4 118 -4 134 1 180 17 240 83 61 68 
+                    80 120 80 225 1 108 -19 174 -70 234 -49 57 -83 72 -199 87 -102 14 -122 15 -164 
+                    7z M2226 2973 l-39 -4 6 -196 c4 -108 7 -283 7 -388 l0 -192 63 -6 c34
+                    -4 103 -2 154 2 78 8 99 14 136 40 146 100 196 392 101 582 -31 62 -89 116
+                    -144 133 -37 13 -233 40 -242 34 -2 -1 -21 -3 -42 -5z"/>
+                    </g>
+                </svg>
+            </div>
+            <div id="nav_videos" class="nav_items"><i class="fab fa-youtube"></i></div>
+            <div id="nav_configuracao" class="nav_items"><i class="fas fa-cog"></i></div>
+        </div>
+    </div>
+
+    <script>
+        const artigos = document.querySelector('.livro-container')
+        artigos.onclick = event =>{
+            if(event.target.parentNode.parentNode.classList.value == 'livro-card'){
+                sessionStorage.setItem('id', event.target.parentNode.parentNode.id)
+                window.location.href = 'buscar-tudo.html?artigo='+event.target.parentNode.parentNode.id
+            }
+            else if(event.target.classList.value == 'livro-card'){
+                sessionStorage.setItem('id', event.target.id)
+                window.location.href = 'buscar-tudo.html?artigo='+event.target.id
+            }
+        }
+    </script>
+    <script>
+        // PARA TESTES
+        const iframes = document.querySelectorAll('iframe');
+        iframes.forEach(iframe => {
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+        });
+    </script>
+</body>
+</html>
